@@ -1,6 +1,6 @@
 # Módulo 3 — Análisis Científico con ROOT y NanoAOD
 
-**Período:** 14 al 18 de septiembre de 2026  
+**Período:** 14 al 18 de septiembre de 2026
 **Dedicación estimada:** 6 horas (trabajo autónomo, colaborativo y taller presencial)
 
 ---
@@ -13,8 +13,10 @@ Enfoque en el análisis directo de datos de física de partículas mediante el f
 ### Entregables del módulo
 
 #### Evidencias documentadas
-* **[01. Exploración de ROOT, Python y NanoAOD](evidencias/01-exploracion-root-nanoaod.md):**  
+* **[01. Exploración de ROOT, Python y NanoAOD](evidencias/01-exploracion-root-nanoaod.md):**
   Cuestionario conceptual sobre el rol de ROOT en física de altas energías, ventajas del análisis en Python (`uproot`, `awkward`), características del formato NanoAOD frente a MiniAOD, y reflexión técnica sobre el manejo de arreglos irregulares (*jagged arrays*).
+* **[02. Trabajo Colaborativo en GitHub](evidencias/02-trabajo-colaborativo.md):**
+  Gestión de ramas de características, apertura de Pull Requests, resolución de revisiones por pares (*code review*) e integración continua mediante merges.
 
 ---
 
