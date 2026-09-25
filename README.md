@@ -32,7 +32,7 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
 | **Semana 01** | 31 ago – 04 sep | Introducción a CMS Open Data | Orientación CMS, scouting de dataset `/SingleMu/` y configuración de entorno | [Ver módulo](semana-01/README.md) |
 | **Semana 02** | 07 sep – 11 sep | Herramientas fundamentales | Práctica de Git, comandos en terminal Linux WSL y análisis de dimuones en Python | [Ver módulo](semana-02/README.md) |
 | **Semana 03** | 14 sep – 18 sep | Análisis científico y colaboración | ROOT, NanoAOD con `uproot`, trabajo colaborativo con ramas/PR y CV Europass | [Ver módulo](semana-03/README.md) |
-| **Semana 04** | 21 sep – 25 sep | Proyección internacional | Convocatoria CERN Summer Studentship, Open Source y optimización de perfil | *Planificado* |
+| **Semana 04** | 21 sep – 25 sep | Proyección internacional | Convocatoria CERN Summer Studentship, Open Source y optimización de perfil | [Ver módulo](semana-04/README.md) |
 | **Semana 05** | 28 sep – 02 oct | Aplicación y comunicación técnica | Redacción de correspondencia científica, pitch y carta de motivación | *Planificado* |
 | **Semana 06** | 05 oct – 09 oct | Metodología de investigación | Búsqueda de literatura especializada y lectura crítica de artículos (método Keshav) | *Planificado* |
 | **Semana 07** | 12 oct – 16 oct | Sprint técnico | Planificación ágil de proyectos, roadmap y reto técnico presencial | *Planificado* |
@@ -67,10 +67,16 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
 │       ├── 03-analisis-dimuones.md
 │       └── img/
 │
-└── semana-03/
+├── semana-03/
+│   ├── README.md
+│   ├── ejercicios/
+│   └── evidencias/
+│       ├── 01-exploracion-root-nanoaod.md
+│       └── 02-trabajo-colaborativo.md
+│
+└── semana-04/
     ├── README.md
     ├── ejercicios/
     └── evidencias/
-        ├── 01-exploracion-root-nanoaod.md
-        └── 02-trabajo-colaborativo.md
+        └── 01-primera-contribucion-opensource.md
 ```
