@@ -8,6 +8,7 @@ Repositorio personal para el registro de actividades, prácticas computacionales
 * **Estudiante:** Angeles Julieth Zambrano Bravo
 * **Universidad:** Universidad de las Fuerzas Armadas – ESPE (Sangolquí, Ecuador)
 * **Perfil en GitHub:** [@ajzambrano12-cloud](https://github.com/ajzambrano12-cloud)
+* **Perfil en LinkedIn:** [Ángeles Julieth Zambrano](https://www.linkedin.com/in/angeles-julieth-zambrano-angeles-a94327303/)
 * **Repositorio de práctica Git:** [mi-proyecto-git](https://github.com/ajzambrano12-cloud/mi-proyecto-git.git)
 
 ---
@@ -78,5 +79,6 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
     ├── README.md
     ├── ejercicios/
     └── evidencias/
-        └── 01-primera-contribucion-opensource.md
+        ├── 01-primera-contribucion-opensource.md
+        └── 02-optimizacion-perfil-linkedin.md
 ```
