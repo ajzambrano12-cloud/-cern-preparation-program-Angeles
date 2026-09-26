@@ -73,7 +73,8 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
 │   ├── ejercicios/
 │   └── evidencias/
 │       ├── 01-exploracion-root-nanoaod.md
-│       └── 02-trabajo-colaborativo.md
+│       ├── 02-trabajo-colaborativo.md
+│       └── 03-cv-tecnico-internacional.md
 │
 └── semana-04/
     ├── README.md

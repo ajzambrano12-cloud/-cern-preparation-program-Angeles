@@ -17,6 +17,8 @@ Enfoque en el análisis directo de datos de física de partículas mediante el f
   Cuestionario conceptual sobre el rol de ROOT en física de altas energías, ventajas del análisis en Python (`uproot`, `awkward`), características del formato NanoAOD frente a MiniAOD, y reflexión técnica sobre el manejo de arreglos irregulares (*jagged arrays*).
 * **[02. Trabajo Colaborativo en GitHub](evidencias/02-trabajo-colaborativo.md):**
   Gestión de ramas de características, apertura de Pull Requests, resolución de revisiones por pares (*code review*) e integración continua mediante merges.
+* **[03. Primer CV Técnico Internacional (Europass)](evidencias/03-cv-tecnico-internacional.md):**
+  Estructuración de la primera versión del currículum técnico internacional en formato estándar europeo Europass, orientada al *CERN Summer Student Programme*, consolidando formación académica, stack tecnológico, proyectos y actividades complementarias.
 
 ---
 
@@ -27,10 +29,10 @@ Enfoque en el análisis directo de datos de física de partículas mediante el f
 | **Lunes 14/09** | Autónoma (2h) | **ROOT y NanoAOD:** Contenedores Docker, lectura columnar de archivos `.root` mediante `uproot` y visualización de propiedades cinemáticas. | [Evidencia 01](evidencias/01-exploracion-root-nanoaod.md) | `Completado` |
 | **Miércoles 16/09** | Grupal (2h) | **Trabajo Colaborativo:** Gestión de ramas en Git, contribuciones coordinadas, apertura y revisión cruzada de Pull Requests. | [Evidencia 02](evidencias/02-trabajo-colaborativo.md) ([PR #1](https://github.com/ajzambrano12-cloud/-cern-preparation-program-Angeles/pull/1), [PR #2](https://github.com/ajzambrano12-cloud/-cern-preparation-program-Angeles/pull/2)) | `Completado` |
 | **Jueves 17/09** | Presencial (4h) | **Data Science & CERN Workshop:** Retos prácticos y hackathon de análisis de datos CMS *(Opcional)*. | Registro de participación en retos. | `Opcional` |
-| **Viernes 18/09** | Autónoma (2h) | **CV Técnico Internacional:** Estructuración de currículum técnico en inglés (Europass) con énfasis en proyectos, habilidades y tecnologías. | Documento o enlace de CV técnico. | `Pendiente` |
+| **Viernes 18/09** | Autónoma (2h) | **CV Técnico Internacional:** Estructuración de currículum técnico (Europass) con énfasis en proyectos, habilidades y tecnologías. | [Evidencia 03](evidencias/03-cv-tecnico-internacional.md) | `Completado` |
 
 ---
 
 ### Estructura de la carpeta
 * `ejercicios/`: Scripts, cuadernos y código de exploración con `uproot` y NanoAOD.
-* `evidencias/`: Documentación técnica de las prácticas (`01-exploracion-root-nanoaod.md`, `02-trabajo-colaborativo.md`) y el CV técnico.
+* `evidencias/`: Documentación técnica de las prácticas (`01-exploracion-root-nanoaod.md`, `02-trabajo-colaborativo.md`) y el CV técnico (`03-cv-tecnico-internacional.md`).
