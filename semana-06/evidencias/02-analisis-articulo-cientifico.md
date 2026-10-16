@@ -1,137 +1,214 @@
-# Actividad 2.1 — Análisis de un Artículo Científico: The CMS NanoAOD Format
+# Análisis Crítico de Publicación Científica: Arquitectura del Formato CMS NanoAOD
+### Evaluación Metodológica bajo el Enfoque de Tres Pasadas de S. Keshav
 
+**Universidad de las Fuerzas Armadas – ESPE**  
+**Departamento de Ciencias Exactas / Ingeniería en Tecnologías de la Información**  
 **Programa de Preparación para Oportunidades CERN 2026 (PREP CERN)**  
-**Departamento de Ciencias Exactas / Tecnologías de la Información**  
-**Universidad de las Fuerzas Armadas – ESPE**
+**Módulo 6:** Metodología e Introducción a la Investigación Científica
 
 ---
 
-### Metadatos de la Entrega
+### Ficha Técnica de la Entrega
 
-| Parámetro | Detalle |
+| Parámetro Institucional | Especificación |
 | :--- | :--- |
-| **Estudiante:** | Angeles Julieth Zambrano Bravo |
-| **Cuenta institucional / GitHub:** | [@ajzambrano12-cloud](https://github.com/ajzambrano12-cloud) |
-| **Módulo académico:** | Módulo 6: Metodología e Introducción a la Investigación Científica |
-| **Recurso metodológico base:** | [2.1 Lectura y análisis de artículos científicos (S. Keshav — The Three-Pass Approach)](https://cs.uwaterloo.ca/~brecht/courses/856/readings/how-to-read/keshav-paper-reading.pdf) |
-| **Fecha de entrega:** | Octubre de 2026 |
-| **Carrera / Semestre:** | Ingeniería en Tecnologías de la Información — 4.° Semestre |
+| **Autora / Estudiante:** | Angeles Julieth Zambrano Bravo |
+| **Identificación Digital / GitHub:** | [@ajzambrano12-cloud](https://github.com/ajzambrano12-cloud) |
+| **Programa Académico:** | Ingeniería en Tecnologías de la Información (4.° Semestre) |
+| **Asignatura / Actividad:** | CERN / Actividad 2.1 — Análisis de un Artículo Científico |
+| **Marco Metodológico de Lectura:** | *How to Read a Paper* (S. Keshav, ACM SIGCOMM CCR, 2007) |
+| **Fecha de Presentación:** | Octubre de 2026 |
 | **Sede:** | Sangolquí, Ecuador |
 
 ---
 
-> **Objetivo de la Actividad:**  
-> Aplicar el método de lectura crítica de artículos científicos en tres pasadas propuesto por S. Keshav (*How to Read a Paper*, ACM SIGCOMM CCR, 2007) para examinar en profundidad un artículo de frontera tecnológica relevante para el CERN y la ingeniería de datos, extrayendo de forma sintética su problemática, metodología, hallazgos, limitaciones y formulando una reflexión técnica con proyección a la carrera de Tecnologías de la Información.
+> ### Sinopsis Ejecutiva
+> El presente informe constituye una evaluación analítica y metodológica del artículo de referencia *«The CMS NanoAOD format: a compact data tier for modern particle physics analysis»* (Rizzi et al., 2019). Empleando el enfoque estructurado de lectura crítica en tres pasadas de S. Keshav, se desglosa la transición paradigmática de la Colaboración CMS hacia arquitecturas de almacenamiento columnar ligero. Se examina la crisis de petabytes y cuellos de botella en la red de cómputo del CERN, los mecanismos de optimización mediante truncamiento adaptativo de mantisa y aplanamiento de árboles ROOT, los resultados empíricos que alcanzaron una compresión del 95% (~1.5–2 kB/evento), los compromisos técnicos (*trade-offs*) derivados de la compresión con pérdida, y se articula una reflexión ingenieril sobre la democratización del acceso a datos abiertos en infraestructuras académicas de TI.
 
 ---
 
-## 1. Referencia y Enlace del Artículo
+## 1. Referencia Bibliográfica y Acceso al Documento
 
 * **Título:** *The CMS NanoAOD format: a compact data tier for modern particle physics analysis*
-* **Autores:** Andrea Rizzi, Gokhan Gokbulut, Marco Peruzzi (en representación de la Colaboración CMS del CERN)
-* **Publicación científica:** *EPJ Web of Conferences*, Volumen 214, Artículo 06021 (2019). Presentado en la *23rd International Conference on Computing in High Energy and Nuclear Physics* (CHEP 2018).
+* **Autores:** Andrea Rizzi, Gokhan Gokbulut, Marco Peruzzi (en representación de la Colaboración CMS del CERN).
+* **Publicación científica:** *EPJ Web of Conferences*, Volumen 214, Artículo 06021 (2019).
+* **Foro de divulgación:** *23rd International Conference on Computing in High Energy and Nuclear Physics* (CHEP 2018), Sofía, Bulgaria.
 * **DOI oficial (Acceso Abierto):** [https://doi.org/10.1051/epjconf/201921406021](https://doi.org/10.1051/epjconf/201921406021)
-* **Preprint en arXiv:** [https://arxiv.org/abs/1904.03223](https://arxiv.org/abs/1904.03223)
+* **Preprint en arXiv:** [arXiv:1904.03223 [physics.comp-ph]](https://arxiv.org/abs/1904.03223)
 
 ---
 
-## 2. Aplicación del Método de las Tres Pasadas de Keshav
+## 2. Marco Metodológico: Aplicación del Enfoque de Tres Pasadas (S. Keshav)
 
-Para garantizar una lectura analítica y evitar la saturación de detalles prematuros, se aplicó el enfoque metodológico de S. Keshav:
+Para abordar la complejidad técnica del manuscrito sin incurrir en saturación cognitiva prematura, la revisión se ejecutó siguiendo las tres etapas sistemáticas propuestas por S. Keshav:
 
-```
-┌────────────────────────────────────────────────────────────────────────┐
-│                      MÉTODO DE S. KESHAV (2007)                        │
-├────────────────────────────────────────────────────────────────────────┤
-│  1.ª Pasada (5-10 min)  │ Título, abstract, introducción, conclusiones │
-│                         │ y 5 Cs (Category, Context, Correctness, ...)  │
-├─────────────────────────┼──────────────────────────────────────────────┤
-│  2.ª Pasada (≤ 1 hora)  │ Gráficos, tablas, estructura de datos y      │
-│                         │ argumentos centrales sin demostraciones      │
-├─────────────────────────┼──────────────────────────────────────────────┤
-│  3.ª Pasada (Detallada) │ Reconstrucción virtual, supuestos ocultos,   │
-│                         │ limitaciones técnicas e ideas futuras        │
-└────────────────────────────────────────────────────────────────────────┘
-```
+`
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 MÉTODO DE LECTURA CRÍTICA DE S. KESHAV (2007)                │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 1.ª Pasada (Vista de Pájaro) │ Análisis de título, abstract, subtítulos,   │
+│                              │ conclusiones y evaluación de las 5 Cs.       │
+├──────────────────────────────┼──────────────────────────────────────────────┤
+│ 2.ª Pasada (Contenido Clave) │ Inspección de figuras, tablas, esquemas de   │
+│                              │ datos y evaluación de argumentos sin pruebas.│
+├──────────────────────────────┼──────────────────────────────────────────────┤
+│ 3.ª Pasada (Profundización)  │ Reconstrucción conceptual, examen de         │
+│                              │ supuestos implícitos, fallas y extensiones.  │
+└─────────────────────────────────────────────────────────────────────────────┘
+`
 
-### Respuestas a las 5 Cs de la Primera Pasada (Keshav)
-1. **Category (Categoría):** Artículo de descripción de arquitectura de software y análisis de un nuevo sistema de almacenamiento de datos científicos en física de altas energías.
-2. **Context (Contexto):** Se sitúa en la evolución de formatos de datos del experimento CMS (de AOD y MiniAOD hacia tiers ligeros) ante la avalancha de datos del Gran Colisionador de Hadrones (LHC Run 2 y preparación para HL-LHC).
-3. **Correctness (Corrección):** Las premisas son válidas; se fundamentan en mediciones directas sobre petabytes de datos reales de colisiones en el WLCG (*Worldwide LHC Computing Grid*).
-4. **Contributions (Contribuciones):** Diseño de un formato columnar puro (~1-2 kB/evento, 95% menor a MiniAOD) legible sin dependencias de CMSSW mediante ROOT y ecosistemas de Python (`uproot`).
-5. **Clarity (Claridad):** El manuscrito está sólidamente estructurado, con tablas comparativas precisas de tamaño por partícula y flujos de análisis claros.
+### Matriz de Diagnóstico Inicial: Evaluación de las 5 Cs
+Durante la **primera pasada**, se sometió la publicación al filtro de las cinco preguntas críticas de Keshav:
 
----
-
-## 3. Problema: ¿Qué problema intenta resolver?
-
-El aumento continuo de la luminosidad y tasa de colisiones en el LHC generó una **crisis de almacenamiento y ancho de banda** en la red de cómputo del CERN:
-* **Escala masiva y cuellos de botella:** El tier de análisis intermedio estándar (*MiniAOD*), aunque redujo el formato primario *AOD*, mantenía un tamaño promedio de ~30 a 50 kB por evento. Al multiplicar esto por decenas de miles de millones de eventos registrados y simulados durante el Run 2, el volumen superó decenas de petabytes.
-* **Sobrecarga de red y ciclos lentos:** Cientos de físicos requerían descargar o transmitir continuamente conjuntos masivos a través de enlaces de red institucionales para análisis finales, saturando el almacenamiento en disco de las universidades y obligando a esperas de días para completar una iteración analítica.
-* **Dependencia de software pesado:** MiniAOD requería vincular las librerías completas del framework central *CMSSW* en C++, lo que dificultaba el uso directo de herramientas contemporáneas de ciencia de datos en Python.
+| Criterio (5 Cs) | Evaluación Crítica | Diagnóstico Técnico |
+| :--- | :--- | :--- |
+| **Categoría (Category)** | ¿Qué tipo de artículo es? | Publicación de **arquitectura de software científico e ingeniería de datos**. Describe el diseño, implementación y benchmarking de un nuevo formato de almacenamiento para física de altas energías. |
+| **Contexto (Context)** | ¿Con qué otros trabajos se conecta? | Se sitúa en la evolución de los formatos de datos del experimento CMS del LHC (*AOD* y *MiniAOD*) frente al desafío de escalabilidad impuesto por el aumento de luminosidad en el Run 2 y el futuro *High-Luminosity LHC (HL-LHC)*. |
+| **Corrección (Correctness)** | ¿Los supuestos y métodos son válidos? | Sí. Los resultados se fundamentan en pruebas empíricas directas sobre petabytes de datos reales de colisiones proton-protón a $\sqrt{s} = 13	ext{ TeV}$ procesados en el *Worldwide LHC Computing Grid* (WLCG). |
+| **Contribución (Contributions)** | ¿Cuáles son los aportes principales? | Creación de un tier ultraligero (~1.5–2 kB/evento) que reduce en un **95%** el tamaño frente a MiniAOD, prescinde de dependencias complejas de C++ (*CMSSW*) y permite lectura nativa columnar en Python (uproot). |
+| **Claridad (Clarity)** | ¿El documento está bien escrito? | Excelente. Presenta tablas desglosadas de presupuesto de almacenamiento por partícula, justificación física de la precisión requerida y flujos claros de producción y análisis. |
 
 ---
 
-## 4. Objetivo: ¿Qué busca demostrar o conseguir?
+## 3. Diagnóstico del Problema: Cuellos de Botella en la Red y Cómputo del LHC
 
-El trabajo busca concebir, implementar y validar un nivel de datos ultra-compacto (*NanoAOD*) que cumpla simultáneamente con:
-1. **Compresión extrema sin pérdida crítica:** Reducir el tamaño medio por evento a **1–2 kB** (alrededor del 5% del tamaño de MiniAOD), permitiendo que la totalidad de los datos analizables de un año quepan en unos pocos terabytes.
-2. **Autonomía tecnológica:** Almacenar los datos como árboles planos (`TTree` de ROOT) sin clases complejas de C++, de modo que puedan leerse directamente en Python nativo (`uproot`, `pandas`, `numpy`) sin necesidad de instalar o compilar el framework de CMS.
-3. **Cobertura funcional elevada:** Satisfacer al menos el **50% de los análisis de física finales** de la colaboración (estudios del bosón de Higgs, búsquedas de nueva física, mediciones del Modelo Estándar) directamente sobre este formato.
+El Gran Colisionador de Hadrones (LHC) genera una de las mayores densidades de flujo de datos del planeta. Con el incremento progresivo de la tasa de colisiones y la luminosidad instantánea, la infraestructura de cómputo del CERN enfrentó severas restricciones:
 
----
+`
+                  ┌────────────────────────┐
+                  │ Colisiones LHC (CMS)   │  Tasa de colisión: 40 MHz
+                  └───────────┬────────────┘
+                              │ Nivel de Trigger (HLT)
+                              ▼
+                  ┌────────────────────────┐
+                  │ Formato RAW / AOD      │  ~400 kB – 1 MB / evento
+                  │ (Física e instrument.) │  Decenas de Petabytes
+                  └───────────┬────────────┘
+                              │ Reducción primaria (2014)
+                              ▼
+                  ┌────────────────────────┐
+                  │ Formato MiniAOD        │  ~30 – 50 kB / evento
+                  │ (Objetos reconstruid.) │  Saturación de disco universitario
+                  └───────────┬────────────┘  Dependencia estricta de CMSSW (C++)
+                              │ Crisis de escalabilidad en Run 2
+                              ▼
+                  ┌────────────────────────┐
+                  │ Cuellos de Botella WLCG│  Enlaces WAN saturados, colas de espera
+                  │ y Barrera Tecnológica  │  de días, exclusión de ciencia abierta
+                  └────────────────────────┘
+`
 
-## 5. Metodología: ¿Qué métodos, herramientas y procedimientos utiliza?
-
-Para lograr esta drástica optimización, los autores implementaron las siguientes técnicas de ingeniería de datos:
-
-1. **Aplanamiento Columnar (Flat Tables):**
-   * Transformación de grafos orientados a objetos complejos en colecciones de tablas planas basadas en tipos primitivos (`float`, `int`, `bool`) y arreglos dinámicos de longitud variable (por ejemplo, `Muon_pt[nMuon]`).
-2. **Compresión Cuantitativa con Precisión Truncada:**
-   * En lugar de almacenar números en coma flotante estándar de 32 o 64 bits, se redujo el tamaño de la mantisa (*bit truncation*) adaptándola a la resolución experimental del detector. Por ejemplo, los ángulos directores de partículas ($\eta, \phi$) se truncan a 8 o 12 bits de mantisa sin impacto físico apreciable.
-3. **Eliminación de Información de Muy Bajo Nivel:**
-   * Se descartaron trazas detalladas de impactos individuales en sensores (*hits* de silicio) y conglomerados calorimétricos secundarios, preservando únicamente las propiedades físicas ya reconstruidas y calibradas de cada partícula (leptones, fotones, jets, energía faltante).
-4. **Compatibilidad Estándar y Evaluación Empírica:**
-   * Almacenamiento en archivos `.root` nativos procesables con librerías abiertas (`uproot`, `awkward`). Pruebas de rendimiento sobre datasets de colisiones reales proton-protón a $\sqrt{s} = 13\text{ TeV}$.
-
----
-
-## 6. Resultados: ¿Cuáles son los principales hallazgos?
-
-* **Reducción de tamaño del 95%:**  
-  El tamaño por evento se redujo con éxito a **~1.5 a 2.0 kB/evento**, logrando un factor de compresión de 20 a 1 respecto a MiniAOD y de más de 200 a 1 respecto al AOD original.
-* **Viabilidad de almacenamiento local:**  
-  Un dataset completo de colisiones y simulaciones de un año completo (~100 mil millones de eventos) ocupa únicamente unos **150 a 200 TB**, lo que hace factible mantener réplicas completas en centros de cómputo universitarios estándar sin requerir almacenamiento masivo de clase petabyte.
-* **Aceleración drástica de los ciclos de análisis:**  
-  El tiempo necesario para procesar millones de eventos se redujo de horas a escasos minutos, permitiendo un flujo de análisis interactivo mediante Jupyter Notebooks y Python.
-* **Independencia de plataforma:**  
-  Se demostró que herramientas ligeras como `uproot` en Python alcanzan tasas de lectura de varios millones de eventos por segundo, democratizando el acceso a estudiantes e instituciones con estaciones de trabajo convencionales.
-
----
-
-## 7. Limitaciones: ¿Qué dificultades o restricciones se identifican?
-
-1. **Compresión con pérdida (Lossy Compression):**  
-   Al descartar los datos primarios de detectores, los análisis que requieren recalibrar algoritmos de identificación o investigar fenómenos que dependen de la topología cruda de las trazas no pueden utilizar NanoAOD y deben recurrir obligatoriamente a MiniAOD o AOD.
-2. **Inflexibilidad en correcciones post-procesamiento:**  
-   Si una nueva escala de energía de jets o corrección de eficiencia de muones requiere variables no incluidas en el esquema predeterminado de NanoAOD, es necesario reprocesar la muestra desde tiers superiores o esperar a una nueva versión del esquema.
-3. **Sensibilidad de la mantisa truncada:**  
-   Para búsquedas de extrema precisión angular o cinemática fina, la truncación de coma flotante podría introducir sesgos sistemáticos si no se calibran rigurosamente las cotas de error.
+1. **Escala masiva e insostenibilidad de almacenamiento:**  
+   Aunque el formato intermedio *MiniAOD* (introducido en 2014) logró reducir el formato original *AOD* a ~30–50 kB por evento, la acumulación de decenas de miles de millones de colisiones y simulaciones Monte Carlo durante el Run 2 saturó las capacidades de almacenamiento en disco en los centros de cómputo Tier-2 y Tier-3 del WLCG.
+2. **Saturación de ancho de banda y latencia analítica:**  
+   Los grupos de investigación universitarios debían transferir rutinariamente petabytes de datos sobre enlaces WAN para refinar sus selecciones. Este proceso demoraba días o semanas, limitando la iteración rápida de hipótesis físicas y saturando los enlaces institucionales.
+3. **Dependencia arquitectónica de frameworks propietarios:**  
+   MiniAOD se diseñó como un grafo de objetos C++ estrechamente acoplado al framework institucional *CMSSW*. Esto impedía a los investigadores emplear el floreciente ecosistema de ciencia de datos e interactividad en Python (Jupyter, NumPy, Pandas, Matplotlib) sin desplegar complejas capas de emulación.
 
 ---
 
-## 8. Reflexión Crítica y Pregunta Resultante
+## 4. Objetivos y Criterios de Diseño de la Arquitectura NanoAOD
 
-### ¿Qué aprendí al analizar este artículo?
-Comprendí que la investigación en física de altas energías moderna es, en esencia, un desafío interdisciplinario de **Ingeniería en Tecnologías de la Información y Computación Científica**. El diseño de estructuras de datos columnares y la compresión adaptativa marcan la diferencia entre una ciencia reservada a unos pocos laboratorios con centros de datos masivos y una ciencia verdaderamente colaborativa y global. Asimismo, aplicar la técnica de lectura de Keshav me permitió concentrarme primero en el propósito y las contribuciones antes de perderme en las fórmulas matemáticas o particularidades de C++.
+Para erradicar estos cuellos de botella, la colaboración CMS concibió el formato **NanoAOD** bajo tres objetivos estratégicos de ingeniería de software:
 
-### Pregunta que me queda tras la lectura
-> *¿En qué medida es posible implementar técnicas de streaming inteligente y descompresión columnar en memoria (Zero-Copy) al transferir NanoAOD a través de redes académicas internacionales, de forma que el cómputo en Python comience en paralelo a la descarga sin esperar la llegada del archivo completo?*
+* **Compresión extrema con fidelidad física:** Reducir el tamaño promedio por evento a una cota de **1–2 kB/evento** (un factor de reducción de ~20× respecto a MiniAOD y ~200× frente a AOD), permitiendo que un año completo de datos analizables quepa en unas decenas de terabytes.
+* **Autonomía tecnológica e interoperabilidad:** Eliminar por completo el acoplamiento con CMSSW en la fase de análisis de usuario final. La información debía serializarse en tablas planas de TTree de ROOT utilizando exclusivamente tipos primitivos, garantizando lectura inmediata con bibliotecas abiertas en Python (uproot, wkward-array).
+* **Cobertura funcional representativa:** Garantizar que el formato contenga el contenido informativo necesario para sustentar de manera autónoma al menos el **50% de los análisis de física finales** de la colaboración (estudios de precisión del bosón de Higgs, mediciones electrodébiles y búsquedas de física más allá del Modelo Estándar).
 
 ---
 
-## 9. Referencias Bibliográficas
+## 5. Metodología e Innovaciones de Ingeniería de Datos
 
-1. **Keshav, S.** (2007). *How to Read a Paper*. ACM SIGCOMM Computer Communication Review, 37(3), 83–84. https://doi.org/10.1145/1273445.1273458
-2. **Rizzi, A., Gokbulut, G., & Peruzzi, M.** (2019). *The CMS NanoAOD format: a compact data tier for modern particle physics analysis*. EPJ Web of Conferences, 214, 06021. https://doi.org/10.1051/epjconf/201921406021
-3. **Pivarski, J., et al.** (2020). *Columnar data analysis with Uproot and Awkward Array in high-energy physics*. Computing and Software for Big Science, Springer.
+Para alcanzar una tasa de compresión del 95% sin desvirtuar la validez científica de las colisiones, los autores desplegaron cuatro estrategias metodológicas de optimización:
+
+### 5.1. Aplanamiento Columnar de Estructuras de Datos (Flat Columnar Tables)
+Se desmantelaron las jerarquías de herencia y grafos de punteros de C++. Los datos de cada partícula se organizaron como columnas independientes indexadas por arreglos unidimensionales basados en tipos nativos:
+* Arreglos de tamaño variable por evento para colecciones dinámicas de partículas:  
+  Muon_pt[nMuon], Muon_eta[nMuon], Muon_phi[nMuon], Muon_charge[nMuon].
+* Variables escalares para magnitudes globales del evento:  
+  MET_pt (energía faltante), PV_npvs (número de vértices primarios).
+
+### 5.2. Compresión Adaptativa con Pérdida mediante Truncamiento de Mantisa (Bit Truncation)
+Los estándares de coma flotante IEEE 754 de 32 bits (*single precision*) asignan 23 bits a la mantisa, ofreciendo una precisión numérica de ~7 dígitos decimales. Sin embargo, la resolución intrínseca de los calorímetros y detectores de trazas de CMS no supera el 1% en muchas variables cinemáticas.
+* Los autores implementaron un algoritmo de **poda de bits redundantes** en la mantisa, preservando únicamente entre 8 y 12 bits significativos para magnitudes como ángulos azimutales ($\phi$) y pseudorapidez ($\eta$).
+* Al truncar los bits de menor peso a ceros continuos, los algoritmos de compresión sin pérdida posteriores (como ZLIB o LZMA en ROOT) alcanzan factores de compactación drásticamente superiores.
+
+`
+Formato IEEE 754 Float32 Estándar (32 bits):
+┌───┬──────────────┬───────────────────────────────────────────────┐
+│ s │ Exponente(8) │ Mantisa Completa (23 bits de alta entropía)   │
+└───┴──────────────┴───────────────────────────────────────────────┘
+
+Formato NanoAOD con Bit Truncation (Compresión adaptativa):
+┌───┬──────────────┬───────────────────────┬───────────────────────┐
+│ s │ Exponente(8) │ Mantisa Útil (10 bits)│ Ceros de Relleno (13) │
+└───┴──────────────┴───────────────────────┴───────────────────────┘
+                                           └──────┬──────────────┘
+                                                  ▼
+                        Algoritmos ZLIB/LZMA colapsan cadenas de ceros
+`
+
+### 5.3. Filtrado Selectivo de Objetos y Poda de Trazas de Bajo Nivel
+Se descartaron los impactos crudos en celdas de silicio (*rechits*), trazas incompletas de partículas cargadas y conglomerados calorimétricos individuales. Únicamente se exportan los cuatro-vectores reconstruidos de partículas de alto nivel y banderas booleanas precalculadas de algoritmos de identificación (*ID working points*).
+
+### 5.4. Comparativa Arquitectónica de los Tiers de Datos de CMS
+
+| Atributo Técnico | AOD (Analysis Object Data) | MiniAOD (Miniaturized AOD) | NanoAOD (Nano AOD) |
+| :--- | :---: | :---: | :---: |
+| **Tamaño medio por evento** | $\sim 400	ext{ kB} - 1	ext{ MB}$ | $\sim 30 - 50	ext{ kB}$ | $\mathbf{\sim 1.5 - 2.0	ext{ kB}}$ |
+| **Factor de reducción** | Línea base (	imes$) | $\sim 10 - 15	imes$ | $\mathbf{\sim 200	imes}$ |
+| **Estructura subyacente** | Clases C++ CMSSW complejas | Clases C++ optimizadas | **Tablas planas ROOT TTree** |
+| **Dependencia de CMSSW** | Estricta y obligatoria | Estricta y obligatoria | **Ninguna (Lectura en Python/uproot)** |
+| **Acceso a tracks crudos** | Total | Parcial (solo tracks clave) | Nulo (solo física reconstruida) |
+| **Caso de uso principal** | Calibración y reprocesamiento | Selección física general | **Análisis final y ciencia de datos** |
+
+---
+
+## 6. Resultados y Validación Empírica
+
+La evaluación del formato NanoAOD demostró beneficios cuantitativos contundentes en el ecosistema computacional de CMS:
+
+1. **Reducción volumétrica sostenida (~95%):**  
+   El tamaño final promedio se estabilizó entre **1.5 y 2.0 kB/evento**. Al analizar el desglose, los jets de partículas representan aproximadamente el 30% del volumen, los muones y electrones el 25%, y los indicadores de disparadores (HLT) y vértices el 45% restante.
+2. **Sostenibilidad del almacenamiento distribuido:**  
+   Una muestra de colisiones de 10 mil millones de eventos (típica de un año del Run 2) se almacena en únicamente **15 a 20 TB**, en marcado contraste con los 400 TB requeridos por MiniAOD o los más de 4 PB exigidos por AOD. Esto viabiliza la tenencia de copias locales en clústeres departamentales.
+3. **Aceleración en tasas de lectura y procesamiento:**  
+   Al emplear el modelo columnar plano, el ancho de banda de procesamiento en memoria superó los **5 millones de eventos por segundo** sobre núcleos estándar utilizando uproot, permitiendo a los físicos generar histogramas de colisiones en tiempo interactivo en cuestión de segundos.
+4. **Democratización científica:**  
+   El desacoplamiento del framework CMSSW permitió que investigadores y estudiantes ejecuten flujos analíticos en plataformas en la nube (como Google Colab o Binder) y estaciones portátiles convencionales.
+
+---
+
+## 7. Análisis Crítico de Limitaciones y Compromisos de Diseño (*Trade-offs*)
+
+Desde la perspectiva de la arquitectura de software y la física experimental, el formato introduce compromisos inevitables:
+
+1. **Compresión con pérdida irreversible (Lossy Nature):**  
+   Al descartar los elementos primarios de los detectores, cualquier análisis que requiera recalibrar algoritmos de identificación de partículas, aplicar nuevos alineamientos geométricos de detectores o estudiar resonancias exóticas que dejen trazas atípicas no puede ejecutarse en NanoAOD; los científicos deben recurrir obligatoriamente a MiniAOD o AOD.
+2. **Inflexibilidad del esquema estático de datos:**  
+   Si la colaboración científica desarrolla una nueva corrección cinemática o un parámetro de aprendizaje profundo para clasificación de jets que no fue contemplado en el esquema de producción de NanoAOD, toda la comunidad debe esperar a un nuevo ciclo de centralizado de reprocesamiento (*re-nanoAOD*) para acceder a dicha variable.
+3. **Propagación de incertidumbre por truncamiento de mantisa:**  
+   En análisis de precisión sub-porcentual (como la medición ultraprecisa de la masa del bosón W o mediciones de polarización angular fina), la reducción de bits en la mantisa podría inducir sesgos sistemáticos si las cotas de redondeo no se calibran de forma exhaustiva para cada canal cinemático.
+
+---
+
+## 8. Síntesis Reflexiva y Proyección en Ingeniería de TI
+
+### 8.1. Aprendizajes Clave Adquiridos
+La revisión de este manuscrito evidencia que el avance de la física fundamental de frontera está intrínsecamente supeditado a la **arquitectura y eficiencia de las Tecnologías de la Información**. Lejos de constituir un mero problema de almacenamiento físico, la gestión de datos a escala de exabytes exige innovaciones en serialización columnar, técnicas de reducción de entropía (bit-truncation) y diseño de APIs orientadas a la reproducibilidad. 
+
+Asimismo, la aplicación del método de Keshav demostró ser una competencia invaluable: permitió abstraer la arquitectura global y los compromisos de diseño antes de sumergirse en detalles de bajo nivel, fortaleciendo mi capacidad de juicio técnico ante literatura científica internacional.
+
+### 8.2. Formulación de Pregunta Técnica de Frontera
+Articulando los hallazgos de este paper con mi formación en redes, programación y soporte de infraestructura en la ESPE, formulo la siguiente interrogante técnica de investigación:
+
+> **«¿En qué medida es factible combinar la arquitectura columnar de CMS NanoAOD con protocolos de transporte orientados a flujos (Zero-Copy Memory Streaming y compresión LZ4 en vuelo) para permitir que estaciones de trabajo universitarias procesen eventos en Python en tiempo real a medida que ingresan por la red, eliminando el almacenamiento intermedio en disco local?»**
+
+---
+
+## 9. Referencias Bibliográficas (Estándar IEEE)
+
+1. S. Keshav, «How to Read a Paper», *ACM SIGCOMM Computer Communication Review*, vol. 37, n.º 3, pp. 83–84, jul. 2007. doi: [10.1145/1273445.1273458](https://doi.org/10.1145/1273445.1273458).
+2. A. Rizzi, G. Gokbulut, y M. Peruzzi, «The CMS NanoAOD format: a compact data tier for modern particle physics analysis», *EPJ Web of Conferences*, vol. 214, p. 06021, 2019. doi: [10.1051/epjconf/201921406021](https://doi.org/10.1051/epjconf/201921406021).
+3. CMS Collaboration, «The CMS Experiment at the CERN LHC», *Journal of Instrumentation*, vol. 3, n.º 08, p. S08004, ago. 2008. doi: [10.1088/1748-0221/3/08/S08004](https://doi.org/10.1088/1748-0221/3/08/S08004).
+4. J. Pivarski et al., «Columnar data analysis with Uproot and Awkward Array in high-energy physics», en *Proc. of the 24th Int. Conf. on Computing in High Energy and Nuclear Physics (CHEP 2019)*, Adelaida, Australia, 2020.
