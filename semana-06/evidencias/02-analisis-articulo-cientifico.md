@@ -177,7 +177,7 @@ Articulando los hallazgos de este paper con mi formación en redes, programació
 
 ---
 
-## 9. Referencias Bibliográficas (Estándar IEEE)
+## 9. Referencias Bibliográficas 
 
 1. S. Keshav, «How to Read a Paper», *ACM SIGCOMM Computer Communication Review*, vol. 37, n.º 3, pp. 83–84, jul. 2007. doi: [10.1145/1273445.1273458](https://doi.org/10.1145/1273445.1273458).
 2. A. Rizzi, G. Gokbulut, y M. Peruzzi, «The CMS NanoAOD format: a compact data tier for modern particle physics analysis», *EPJ Web of Conferences*, vol. 214, p. 06021, 2019. doi: [10.1051/epjconf/201921406021](https://doi.org/10.1051/epjconf/201921406021).
