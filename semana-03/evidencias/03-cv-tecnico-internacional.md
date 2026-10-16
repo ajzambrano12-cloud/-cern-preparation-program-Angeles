@@ -84,7 +84,7 @@ Posee competencias en programación (C++, Python, Java), maquetación web (HTML5
 
 Esta primera versión del CV representa la línea base inicial. Durante las siguientes etapas del Programa de Preparación CERN 2026, se implementará la siguiente ruta de mejora:
 
-1. **Incorporación de Cómputo Científico:** Registrar las librerías analíticas dominadas en los módulos del CERN (`uproot`, `awkward`, NanoAOD, ROOT y contenedores Docker de CMS Open Data).
+1. **Incorporación de Cómputo Científico:** Registrar las librerías analíticas dominadas en los módulos del CERN (`uproot`, `awkward`, NanoAOD, ROOT y herramientas de análisis de CMS Open Data).
 2. **Contribuciones Open Source:** Documentar la contribución aceptada en el repositorio internacional *First Contributions* ([PR #125407](https://github.com/firstcontributions/first-contributions/pull/125407)).
 3. **Traducción y Redacción en Inglés Técnico:** Elaborar la versión 100% en inglés del CV Europass de cara a la apertura formal de la postulación al *CERN Summer Student Programme 2027*.
 4. **Progresión de Nivel de Inglés:** Fortalecer el dominio del idioma hacia niveles B1/B2 mediante clubes de conversación técnica y redacción de correspondencia científica.

@@ -20,7 +20,7 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
 
 ### Competencias técnicas en desarrollo
 * **Física experimental y análisis de datos:** Comprensión de datos abiertos de CMS (formatos AOD y NanoAOD), selección cinemática por triggers y reconstrucción de masa invariante para resonancias del Modelo Estándar ($J/\psi$, $Z$).
-* **Entornos computacionales:** Uso de terminal Linux bajo WSL (distribución Ubuntu), automatización mediante scripts bash y despliegue de contenedores Docker para reproducibilidad científica.
+* **Entornos computacionales:** Uso de terminal Linux bajo WSL (distribución Ubuntu), automatización mediante scripts bash y gestión de entornos de cómputo para reproducibilidad científica.
 * **Control de versiones colaborativo:** Gestión de proyectos con Git y GitHub, flujo de trabajo con ramas, revisión de Pull Requests y trazabilidad de cambios.
 * **Procesamiento de datos en Python:** Manejo de librerías científicas (`pandas`, `numpy`, `matplotlib`, `uproot`) para el análisis columnar y visualización de distribuciones físicas.
 
@@ -35,7 +35,7 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
 | **Semana 03** | 14 sep – 18 sep | Análisis científico y colaboración | ROOT, NanoAOD con `uproot`, trabajo colaborativo con ramas/PR y CV Europass | [Ver módulo](semana-03/README.md) |
 | **Semana 04** | 21 sep – 25 sep | Proyección internacional | Convocatoria CERN Summer Studentship, Open Source y optimización de perfil | [Ver módulo](semana-04/README.md) |
 | **Semana 05** | 28 sep – 02 oct | Aplicación y comunicación técnica | Redacción de correspondencia científica, pitch y carta de motivación | [Ver módulo](semana-05/README.md) |
-| **Semana 06** | 05 oct – 16 oct | Metodología de investigación | Introducción a la investigación científica (Elsevier) y lectura crítica de papers (método Keshav) | [Ver módulo](semana-06/README.md) |
+| **Semana 06** | 05 oct – 09 oct | Metodología de investigación | Introducción a la investigación científica (Elsevier) y lectura crítica de papers (método Keshav) | [Ver módulo](semana-06/README.md) |
 | **Semana 07** | 12 oct – 16 oct | Sprint técnico | Planificación ágil de proyectos, roadmap y reto técnico presencial | *Planificado* |
 | **Semana 08** | 19 oct – 23 oct | Formulación de proyectos | Delimitación temática, conformación de equipos y especificación de hitos | *Planificado* |
 | **Semana 09** | 26 oct – 30 oct | Mentorías y retroalimentación | Validación de prototipos, revisión técnica de código y recomendaciones | *Planificado* |

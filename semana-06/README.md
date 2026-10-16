@@ -1,7 +1,7 @@
 # Módulo 6 — Metodología e Introducción a la Investigación Científica
 
-**Período:** 05 de octubre al 16 de octubre de 2026  
-**Dedicación estimada:** 10 horas (trabajo autónomo, sesiones de fundamentación científica y análisis bibliográfico)
+**Período:** 05 de octubre al 09 de octubre de 2026  
+**Dedicación estimada:** 6 horas (trabajo autónomo, sesiones de fundamentación científica y análisis bibliográfico)
 
 ---
 
@@ -24,11 +24,10 @@ Este módulo introduce los fundamentos metodológicos de la investigación cient
 
 | Fecha | Modalidad | Actividad principal | Entregable esperado | Estado |
 | :--- | :---: | :--- | :--- | :---: |
-| **Lunes 05/10** | Guiada (2h) | **Introduction to Research (Elsevier):** Fundamentos del método científico, delimitación de problemas y preguntas investigables. | Notas metodológicas y selección de área. | `Completado` |
-| **Miércoles 07/10** | Autónoma (2h) | **Problem Formulation & Research Question:** Articulación entre infraestructura de redes de TI y datos de física experimental (CMS NanoAOD). | [Evidencia 01](evidencias/01-mi-tema-de-investigacion.md) | `Completado` |
-| **Viernes 09/10** | Autónoma (2h) | **Significance & Methodology Synthesis:** Justificación de impacto, democratización de la ciencia abierta y consolidación formal de informe. | [Evidencia 01](evidencias/01-mi-tema-de-investigacion.md) | `Completado` |
-| **Lunes 12/10** | Guiada (2h) | **Scientific Paper Reading (S. Keshav):** El método de las tres pasadas y evaluación de las 5 Cs en artículos tecnológicos. | Esquema de lectura y selección de artículo. | `Completado` |
-| **Viernes 16/10** | Autónoma (2h) | **Paper Analysis & Critical Review:** Análisis del paper *The CMS NanoAOD format*, síntesis de hallazgos, limitaciones y reflexión técnica. | [Evidencia 02](evidencias/02-analisis-articulo-cientifico.md) | `Completado` |
+| **Lunes 05/10** | Guiada (2h) | **Introduction to Research (Elsevier):** Fundamentos del método científico, delimitación de problemas y formulación de preguntas. | Notas metodológicas y selección temática. | `Completado` |
+| **Miércoles 07/10** | Autónoma (2h) | **Research Question & Problem Formulation:** Delimitación de infraestructura de red de TI y datos abiertos (CMS NanoAOD). | [Actividad 1.1](evidencias/01-mi-tema-de-investigacion.md) | `Completado` |
+| **Jueves 08/10** | Guiada (1h) | **Scientific Paper Reading (S. Keshav):** El método de las tres pasadas y evaluación de las 5 Cs en artículos tecnológicos. | Esquema conceptual de lectura crítica. | `Completado` |
+| **Viernes 09/10** | Autónoma (2h) | **Paper Analysis & Critical Review:** Análisis del paper *The CMS NanoAOD format*, síntesis de hallazgos, limitaciones y reflexión técnica. | [Actividad 2.1](evidencias/02-analisis-articulo-cientifico.md) | `Completado` |
 
 ---
 

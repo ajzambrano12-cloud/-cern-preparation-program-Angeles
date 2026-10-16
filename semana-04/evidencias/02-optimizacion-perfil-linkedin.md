@@ -20,7 +20,7 @@ A continuación se detalla la comparativa técnica entre la versión inicial del
 
 | Sección de LinkedIn | Versión Inicial (Borrador) | Versión Optimizada (Estándar Industria / CERN) | Justificación y Criterio de Mejora |
 | :--- | :--- | :--- | :--- |
-| **Titular Profesional (Headline)** | `Estudiante de Ingeniería en Tecnologías de la Información y Comunicación (TICS) – ESPE \| Desarrollo Web \| Soporte Técnico \| Entusiasta de Ciberseguridad` | `Estudiante de Ingeniería en TI \| Universidad de las Fuerzas Armadas - ESPE \| Programa CERN 2026 \| Python • C++ • Linux • SQL \| Open Source Contributor` | Se sustituyeron términos operativos o genéricos ("Soporte Técnico", "Entusiasta") por competencias técnicas indexables y de alto impacto, destacando la selección en el Programa CERN y el stack analítico. |
+| **Titular Profesional (Headline)** | `Estudiante en Universidad de las Fuerzas Armadas - ESPE` (Genérico / por defecto) | `Estudiante de Ingeniería en Tecnologías de la Información y Comunicación (TICS) – ESPE \| Desarrollo Web \| Soporte Técnico \| Entusiasta de Ciberseguridad` | Se sustituyó el titular genérico por una definición clara de la carrera institucional (ESPE - TICS), áreas de especialización técnica (Desarrollo Web, Soporte Técnico) e intereses de proyección profesional (Ciberseguridad). |
 | **Acerca de (About / Resumen)** | Texto narrativo informal centrado en tareas básicas de mantenimiento de PC y conceptos teóricos de aula. | Estructura profesional en 4 bloques: **Propuesta de valor**, **Experiencia en infraestructura**, **Formación analítica CERN/datos**, y **Llamado a la acción (CTA)** con enlace explícito a GitHub. | Permite a un reclutador o investigador del CERN escanear en menos de 10 segundos las fortalezas y proyectos clave del perfil. |
 | **Experiencia Laboral (Policía Nacional)** | Listado reactivo de actividades cotidianas ("Atendí tickets", "Asistí en configuración"). | Redacción orientada a resultados e impacto con verbos de acción ("Resolución de incidencias...", "Mantenimiento preventivo...", "Aseguramiento de continuidad operativa"). | Aplica el estándar de redacción técnica (acción + contexto + resultado), demostrando proactividad y responsabilidad en entornos institucionales. |
 | **Proyectos Técnicos** | "Casas Abiertas" y "Repositorio personal". | 1. **CERN Preparation Program 2026:** Análisis de colisiones CMS con Python, uproot y NanoAOD.<br>2. **Open Source Contribution:** PR #125407 fusionado en *First Contributions*.<br>3. **Soporte & Infraestructura Policial:** Optimización de estaciones de trabajo. | Eleva el perfil desde un ámbito puramente colegial hacia iniciativas científicas y colaborativas de alcance internacional. |
@@ -32,24 +32,19 @@ A continuación se detalla la comparativa técnica entre la versión inicial del
 
 ### 2.1. Titular Profesional
 ```text
-Estudiante de Ingeniería en TI | Universidad de las Fuerzas Armadas - ESPE | Programa CERN 2026 | Python • C++ • Linux • SQL | Open Source Contributor
+Estudiante de Ingeniería en Tecnologías de la Información y Comunicación (TICS) – ESPE | Desarrollo Web | Soporte Técnico | Entusiasta de Ciberseguridad
 ```
 
 ### 2.2. Sección «Acerca de»
 ```text
-Estudiante de Ingeniería en Tecnologías de la Información en la Universidad de las Fuerzas Armadas – ESPE (cursando 4to semestre), participante seleccionada del Programa de Preparación para Oportunidades CERN 2026.
+Soy estudiante de la Universidad de las Fuerzas Armadas – ESPE, cursando el cuarto semestre de Ingeniería en Tecnologías de la Información y Comunicación. Tengo experiencia práctica en soporte técnico, mantenimiento de PC y administración básica de redes locales, adquirida durante mi pasantía en la Comandancia General de la Policía Nacional, donde brindé soporte a usuarios internos.
 
-Cuento con experiencia práctica en soporte técnico, diagnóstico de infraestructura de hardware y administración básica de redes locales (adquirida en la Comandancia General de la Policía Nacional). Paralelamente, desarrollo competencias en computación científica, análisis de datos abiertos de colisiones del detector CMS del CERN (empleando Python, ROOT, uproot y NanoAOD), despliegue de contenedores Docker y flujos de trabajo colaborativos en Git y GitHub bajo el modelo Forking Workflow.
+Mis habilidades técnicas incluyen HTML, CSS, Python, C++, ofimática, MySQL/MariaDB y conceptos de ciberseguridad. Paralelamente, fortalezco mis competencias participando en el Programa de Preparación para Oportunidades CERN 2026, aprendiendo análisis de datos de física de partículas con Python, uproot y ROOT, así como flujos de trabajo colaborativos en Git y GitHub bajo el modelo Forking Workflow.
 
-Competencias técnicas:
-• Lenguajes y herramientas: Python (pandas, numpy, matplotlib, uproot), C++, HTML5, CSS3, SQL (MySQL, MariaDB), Bash/Linux.
-• Control de versiones y colaboración: Git, GitHub, Forking Workflow, Integración Continua (CI/CD), resolución de Pull Requests.
-• Infraestructura y soporte: Mantenimiento preventivo/correctivo de equipos de cómputo, diagnóstico de fallas, configuración de redes LAN y atención estructurada de incidencias.
+Apasionada por la tecnología, las telecomunicaciones y la seguridad informática. En constante búsqueda de oportunidades de prácticas preprofesionales para aprender y crecer profesionalmente.
 
 Portafolio técnico y código abierto:
 GitHub: https://github.com/ajzambrano12-cloud
-
-En búsqueda activa de oportunidades de prácticas preprofesionales, pasantías técnicas y colaboraciones de investigación en desarrollo de software, análisis de datos y tecnologías de la información.
 ```
 
 ### 2.3. Experiencia Profesional

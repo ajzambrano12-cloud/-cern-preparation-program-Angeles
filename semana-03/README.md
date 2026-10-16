@@ -26,7 +26,7 @@ Enfoque en el análisis directo de datos de física de partículas mediante el f
 
 | Fecha | Modalidad | Actividad principal | Entregable esperado | Estado |
 | :--- | :---: | :--- | :--- | :---: |
-| **Lunes 14/09** | Autónoma (2h) | **ROOT y NanoAOD:** Contenedores Docker, lectura columnar de archivos `.root` mediante `uproot` y visualización de propiedades cinemáticas. | [Evidencia 01](evidencias/01-exploracion-root-nanoaod.md) | `Completado` |
+| **Lunes 14/09** | Autónoma (2h) | **ROOT y NanoAOD:** Lectura columnar de archivos `.root` mediante `uproot`, exploración de estructuras y visualización de propiedades cinemáticas. | [Evidencia 01](evidencias/01-exploracion-root-nanoaod.md) | `Completado` |
 | **Miércoles 16/09** | Grupal (2h) | **Trabajo Colaborativo:** Gestión de ramas en Git, contribuciones coordinadas, apertura y revisión cruzada de Pull Requests. | [Evidencia 02](evidencias/02-trabajo-colaborativo.md) ([PR #1](https://github.com/ajzambrano12-cloud/-cern-preparation-program-Angeles/pull/1), [PR #2](https://github.com/ajzambrano12-cloud/-cern-preparation-program-Angeles/pull/2)) | `Completado` |
 | **Jueves 17/09** | Presencial (4h) | **Data Science & CERN Workshop:** Retos prácticos y hackathon de análisis de datos CMS *(Opcional)*. | Registro de participación en retos. | `Opcional` |
 | **Viernes 18/09** | Autónoma (2h) | **CV Técnico Internacional:** Estructuración de currículum técnico (Europass) con énfasis en proyectos, habilidades y tecnologías. | [Evidencia 03](evidencias/03-cv-tecnico-internacional.md) | `Completado` |

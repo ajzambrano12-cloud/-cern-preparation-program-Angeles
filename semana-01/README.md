@@ -13,7 +13,7 @@ Durante esta primera semana se llevó a cabo el reconocimiento del portal de dat
 ### Registro de evidencias técnicas
 
 1. **[Evidencia 1: Orientación del CMS Open Data Workshop 2024](evidencias/01-orientacion-cms.md)**  
-   Revisión de la estructura pedagógica del taller, herramientas identificadas (Docker, ROOT, Python, NanoAOD) y observaciones del entorno.
+   Revisión de la estructura pedagógica del taller, herramientas identificadas (ROOT, Python, NanoAOD, entornos de análisis) y observaciones del entorno.
 
 2. **[Evidencia 2: Exploración de dataset CMS (Dataset Scouting)](evidencias/02-scouting-dataset.md)**  
    Identificación y análisis del dataset `/SingleMu/Run2012B-22Jan2013-v1/AOD`, descripción de la convención de nomenclatura de tres niveles, formato AOD y aplicaciones físicas en estados finales con muones.
