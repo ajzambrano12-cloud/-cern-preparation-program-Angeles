@@ -42,20 +42,13 @@
 
 Para abordar la complejidad técnica del manuscrito sin incurrir en saturación cognitiva prematura, la revisión se ejecutó siguiendo las tres etapas sistemáticas propuestas por S. Keshav:
 
-`
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                 MÉTODO DE LECTURA CRÍTICA DE S. KESHAV (2007)                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ 1.ª Pasada (Vista de Pájaro) │ Análisis de título, abstract, subtítulos,   │
-│                              │ conclusiones y evaluación de las 5 Cs.       │
-├──────────────────────────────┼──────────────────────────────────────────────┤
-│ 2.ª Pasada (Contenido Clave) │ Inspección de figuras, tablas, esquemas de   │
-│                              │ datos y evaluación de argumentos sin pruebas.│
-├──────────────────────────────┼──────────────────────────────────────────────┤
-│ 3.ª Pasada (Profundización)  │ Reconstrucción conceptual, examen de         │
-│                              │ supuestos implícitos, fallas y extensiones.  │
-└─────────────────────────────────────────────────────────────────────────────┘
-`
+### Fases del Método de Lectura Crítica (S. Keshav)
+
+| Etapa del Método | Tiempo Sugerido | Enfoque de Lectura | Acciones Clave Ejecutadas |
+| :--- | :---: | :--- | :--- |
+| **1.ª Pasada: Vista Panorámica** | 5 – 10 min | Visión estructural y propósito global | Inspección de título, resumen ejecutivo, subtítulos y conclusiones. Aplicación inmediata del filtro de las **5 Cs**. |
+| **2.ª Pasada: Contenido Clave** | $\le 1$ hora | Comprensión conceptual y técnica | Examen detallado de tablas de reducción por objeto, figuras de compresión y lógica de datos, prescindiendo de pruebas analíticas profundas. |
+| **3.ª Pasada: Profundización** | 1 – 2 horas | Análisis crítico y reconstrucción mental | Reconstrucción virtual de la arquitectura del formato, examen de supuestos implícitos, identificación de limitaciones y proyección técnica. |
 
 ### Matriz de Diagnóstico Inicial: Evaluación de las 5 Cs
 Durante la **primera pasada**, se sometió la publicación al filtro de las cinco preguntas críticas de Keshav:
@@ -64,7 +57,7 @@ Durante la **primera pasada**, se sometió la publicación al filtro de las cinc
 | :--- | :--- | :--- |
 | **Categoría (Category)** | ¿Qué tipo de artículo es? | Publicación de **arquitectura de software científico e ingeniería de datos**. Describe el diseño, implementación y benchmarking de un nuevo formato de almacenamiento para física de altas energías. |
 | **Contexto (Context)** | ¿Con qué otros trabajos se conecta? | Se sitúa en la evolución de los formatos de datos del experimento CMS del LHC (*AOD* y *MiniAOD*) frente al desafío de escalabilidad impuesto por el aumento de luminosidad en el Run 2 y el futuro *High-Luminosity LHC (HL-LHC)*. |
-| **Corrección (Correctness)** | ¿Los supuestos y métodos son válidos? | Sí. Los resultados se fundamentan en pruebas empíricas directas sobre petabytes de datos reales de colisiones proton-protón a $\sqrt{s} = 13	ext{ TeV}$ procesados en el *Worldwide LHC Computing Grid* (WLCG). |
+| **Corrección (Correctness)** | ¿Los supuestos y métodos son válidos? | Sí. Los resultados se fundamentan en pruebas empíricas directas sobre petabytes de datos reales de colisiones proton-protón a 13 TeV procesados en el *Worldwide LHC Computing Grid* (WLCG). |
 | **Contribución (Contributions)** | ¿Cuáles son los aportes principales? | Creación de un tier ultraligero (~1.5–2 kB/evento) que reduce en un **95%** el tamaño frente a MiniAOD, prescinde de dependencias complejas de C++ (*CMSSW*) y permite lectura nativa columnar en Python (uproot). |
 | **Claridad (Clarity)** | ¿El documento está bien escrito? | Excelente. Presenta tablas desglosadas de presupuesto de almacenamiento por partícula, justificación física de la precisión requerida y flujos claros de producción y análisis. |
 
@@ -72,32 +65,18 @@ Durante la **primera pasada**, se sometió la publicación al filtro de las cinc
 
 ## 3. Diagnóstico del Problema: Cuellos de Botella en la Red y Cómputo del LHC
 
-El Gran Colisionador de Hadrones (LHC) genera una de las mayores densidades de flujo de datos del planeta. Con el incremento progresivo de la tasa de colisiones y la luminosidad instantánea, la infraestructura de cómputo del CERN enfrentó severas restricciones:
+El Gran Colisionador de Hadrones (LHC) genera una de las mayores densidades de flujo de datos del planeta, con tasas de interacción de 40 MHz. Con el incremento progresivo de la tasa de colisiones y la luminosidad instantánea, la infraestructura de cómputo del CERN (*Worldwide LHC Computing Grid*, WLCG) enfrentó restricciones severas a lo largo de su cadena de datos:
 
-`
-                  ┌────────────────────────┐
-                  │ Colisiones LHC (CMS)   │  Tasa de colisión: 40 MHz
-                  └───────────┬────────────┘
-                              │ Nivel de Trigger (HLT)
-                              ▼
-                  ┌────────────────────────┐
-                  │ Formato RAW / AOD      │  ~400 kB – 1 MB / evento
-                  │ (Física e instrument.) │  Decenas de Petabytes
-                  └───────────┬────────────┘
-                              │ Reducción primaria (2014)
-                              ▼
-                  ┌────────────────────────┐
-                  │ Formato MiniAOD        │  ~30 – 50 kB / evento
-                  │ (Objetos reconstruid.) │  Saturación de disco universitario
-                  └───────────┬────────────┘  Dependencia estricta de CMSSW (C++)
-                              │ Crisis de escalabilidad en Run 2
-                              ▼
-                  ┌────────────────────────┐
-                  │ Cuellos de Botella WLCG│  Enlaces WAN saturados, colas de espera
-                  │ y Barrera Tecnológica  │  de días, exclusión de ciencia abierta
-                  └────────────────────────┘
-`
+### Flujo de Datos y Cuello de Botella Detectado en el LHC
 
+| Nivel / Tier de Datos | Tamaño Promedio por Evento | Volumen Acumulado | Infraestructura y Desafío Técnico Identificado |
+| :--- | :---: | :---: | :--- |
+| **1. Colisiones Primarias (RAW / AOD)** | ~400 kB – 1 MB / evento | Decenas de Petabytes (PB) | Almacenamiento primario en cinta y disco en el Tier-0 del CERN. Contiene trazas crudas de toda la instrumentación física. |
+| **2. Tier Intermedio (MiniAOD - 2014)** | ~30 – 50 kB / evento | Cientos de Terabytes por muestra | Diseñado para selecciones físicas generales; sin embargo, saturó discos en centros Tier-2/Tier-3 universitarios durante el Run 2. Exigía el framework pesado C++ (*CMSSW*). |
+| **3. Cuello de Botella Detectado (WLCG)** | Enlaces WAN congestionados | Latencias de días a semanas | Grupos de investigación esperaban días para transferir muestras completas sobre enlaces compartidos; barrera técnica de acceso para universidades locales. |
+| **4. Solución Arquitectónica (NanoAOD)** | **~1.5 – 2.0 kB / evento** | **15 – 20 TB anuales** | **Reducción del 95%** en peso, tablas columnares planas, lectura nativa en Python (uproot) sin requerir CMSSW. |
+
+### Factores Críticos del Diagnóstico
 1. **Escala masiva e insostenibilidad de almacenamiento:**  
    Aunque el formato intermedio *MiniAOD* (introducido en 2014) logró reducir el formato original *AOD* a ~30–50 kB por evento, la acumulación de decenas de miles de millones de colisiones y simulaciones Monte Carlo durante el Run 2 saturó las capacidades de almacenamiento en disco en los centros de cómputo Tier-2 y Tier-3 del WLCG.
 2. **Saturación de ancho de banda y latencia analítica:**  
@@ -130,23 +109,15 @@ Se desmantelaron las jerarquías de herencia y grafos de punteros de C++. Los da
 
 ### 5.2. Compresión Adaptativa con Pérdida mediante Truncamiento de Mantisa (Bit Truncation)
 Los estándares de coma flotante IEEE 754 de 32 bits (*single precision*) asignan 23 bits a la mantisa, ofreciendo una precisión numérica de ~7 dígitos decimales. Sin embargo, la resolución intrínseca de los calorímetros y detectores de trazas de CMS no supera el 1% en muchas variables cinemáticas.
-* Los autores implementaron un algoritmo de **poda de bits redundantes** en la mantisa, preservando únicamente entre 8 y 12 bits significativos para magnitudes como ángulos azimutales ($\phi$) y pseudorapidez ($\eta$).
-* Al truncar los bits de menor peso a ceros continuos, los algoritmos de compresión sin pérdida posteriores (como ZLIB o LZMA en ROOT) alcanzan factores de compactación drásticamente superiores.
 
-`
-Formato IEEE 754 Float32 Estándar (32 bits):
-┌───┬──────────────┬───────────────────────────────────────────────┐
-│ s │ Exponente(8) │ Mantisa Completa (23 bits de alta entropía)   │
-└───┴──────────────┴───────────────────────────────────────────────┘
+Para optimizar drásticamente la compresión sin pérdida posterior (ZLIB/LZMA), se implementó un truncamiento adaptativo de bits:
 
-Formato NanoAOD con Bit Truncation (Compresión adaptativa):
-┌───┬──────────────┬───────────────────────┬───────────────────────┐
-│ s │ Exponente(8) │ Mantisa Útil (10 bits)│ Ceros de Relleno (13) │
-└───┴──────────────┴───────────────────────┴───────────────────────┘
-                                           └──────┬──────────────┘
-                                                  ▼
-                        Algoritmos ZLIB/LZMA colapsan cadenas de ceros
-`
+| Campo del Estándar IEEE 754 | Formato Float32 Convencional | Optimización NanoAOD (Bit Truncation) | Justificación y Ganancia en Compresión |
+| :--- | :---: | :---: | :--- |
+| **Signo (s)** | 1 bit | 1 bit | Preserva el sentido direccional y carga de las partículas. |
+| **Exponente (e)** | 8 bits | 8 bits | Mantiene el orden de magnitud y rango dinámico físico original. |
+| **Mantisa (m)** | 23 bits (alta entropía de bits aleatorios) | **8 a 12 bits útiles** + **11 a 15 bits en ceros** | La resolución física experimental es de ~1%; los bits de menor peso constituyen ruido. |
+| **Efecto en Compresión ZLIB / LZMA** | Baja tasa de compresión por ruido aleatorio | **Compresión extrema por secuencias uniformes de ceros** | Al rellenar los bits de menor peso con ceros continuos, los algoritmos colapsan las cadenas idénticas. |
 
 ### 5.3. Filtrado Selectivo de Objetos y Poda de Trazas de Bajo Nivel
 Se descartaron los impactos crudos en celdas de silicio (*rechits*), trazas incompletas de partículas cargadas y conglomerados calorimétricos individuales. Únicamente se exportan los cuatro-vectores reconstruidos de partículas de alto nivel y banderas booleanas precalculadas de algoritmos de identificación (*ID working points*).
@@ -155,8 +126,8 @@ Se descartaron los impactos crudos en celdas de silicio (*rechits*), trazas inco
 
 | Atributo Técnico | AOD (Analysis Object Data) | MiniAOD (Miniaturized AOD) | NanoAOD (Nano AOD) |
 | :--- | :---: | :---: | :---: |
-| **Tamaño medio por evento** | $\sim 400	ext{ kB} - 1	ext{ MB}$ | $\sim 30 - 50	ext{ kB}$ | $\mathbf{\sim 1.5 - 2.0	ext{ kB}}$ |
-| **Factor de reducción** | Línea base (	imes$) | $\sim 10 - 15	imes$ | $\mathbf{\sim 200	imes}$ |
+| **Tamaño medio por evento** | ~400 kB – 1 MB | ~30 – 50 kB | **~1.5 – 2.0 kB (-95%)** |
+| **Factor de compactación** | 1× (Línea base) | ~10 – 15× | **~200× (vs AOD)** |
 | **Estructura subyacente** | Clases C++ CMSSW complejas | Clases C++ optimizadas | **Tablas planas ROOT TTree** |
 | **Dependencia de CMSSW** | Estricta y obligatoria | Estricta y obligatoria | **Ninguna (Lectura en Python/uproot)** |
 | **Acceso a tracks crudos** | Total | Parcial (solo tracks clave) | Nulo (solo física reconstruida) |
