@@ -36,7 +36,7 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
 | **Semana 04** | 21 sep – 25 sep | Proyección internacional | Convocatoria CERN Summer Studentship, Open Source y optimización de perfil | [Ver módulo](semana-04/README.md) |
 | **Semana 05** | 28 sep – 02 oct | Aplicación y comunicación técnica | Redacción de correspondencia científica, pitch y carta de motivación | [Ver módulo](semana-05/README.md) |
 | **Semana 06** | 05 oct – 09 oct | Metodología de investigación | Introducción a la investigación científica (Elsevier) y lectura crítica de papers (método Keshav) | [Ver módulo](semana-06/README.md) |
-| **Semana 07** | 12 oct – 16 oct | Sprint técnico | Planificación ágil de proyectos, roadmap y reto técnico presencial | *Planificado* |
+| **Semana 07** | 12 oct – 16 oct | Sprint técnico | Planificación ágil de proyectos, roadmap y delimitación técnica | [Ver módulo](semana-07/README.md) |
 | **Semana 08** | 19 oct – 23 oct | Formulación de proyectos | Delimitación temática, conformación de equipos y especificación de hitos | *Planificado* |
 | **Semana 09** | 26 oct – 30 oct | Mentorías y retroalimentación | Validación de prototipos, revisión técnica de código y recomendaciones | *Planificado* |
 | **Semana 10** | 02 nov – 06 nov | Presentación y evaluación final | Exposición de resultados, defensa técnica individual y cierre del programa | *Planificado* |
@@ -89,10 +89,16 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
 │   └── evidencias/
 │       └── 01-preparacion-postulacion-internacional.md
 │
-└── semana-06/
+├── semana-06/
+│   ├── README.md
+│   ├── ejercicios/
+│   └── evidencias/
+│       ├── 01-mi-tema-de-investigacion.md
+│       └── 02-analisis-articulo-cientifico.md
+│
+└── semana-07/
     ├── README.md
     ├── ejercicios/
     └── evidencias/
-        ├── 01-mi-tema-de-investigacion.md
-        └── 02-analisis-articulo-cientifico.md
+        └── 01-planificacion-inicial-proyecto.md
 ```
