@@ -100,5 +100,6 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
     ├── README.md
     ├── ejercicios/
     └── evidencias/
-        └── 01-planificacion-inicial-proyecto.md
+        ├── 01-planificacion-inicial-proyecto.md
+        └── 02-registro-trabajo-sesion.md
 ```

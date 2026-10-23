@@ -15,6 +15,8 @@ Este módulo introduce los fundamentos de la gestión ágil de proyectos tecnol�
 #### Evidencias documentadas
 * **[01. Planificación Inicial de un Proyecto Tecnológico (HospitaLink-Secure)](evidencias/01-planificacion-inicial-proyecto.md):**  
   Planificación técnica para la simulación y segmentación de la red de un centro hospitalario en **GNS3**, incorporando VLANs independientes para Urgencias, Laboratorio, Farmacia y Administración/Historias Clínicas, junto con Listas de Control de Acceso (ACLs) para proteger la confidencialidad de los datos de pacientes. Incluye objetivo, alcance delimitado, tres hitos de entrega, matriz de responsabilidades por rol, gestión de riesgos de sobrecarga y filtrado, y *roadmap* secuencial en 4 fases.
+* **[02. Registro del Trabajo de la Sesión y Sprint Log](evidencias/02-registro-trabajo-sesion.md):**  
+  Bitácora técnica de seguimiento del progreso de la sesión conforme a los principios de *Sprint Review* de Atlassian Agile Coach. Documenta las actividades avanzadas (HospitaLink-Secure, CMS Open Data, saneamiento de portafolio), enlaces a repositorios y evidencias, reporte exhaustivo de tres incidencias técnicas resueltas (renderizado de tablas, sincronización git rebase y automatización Word COM), tareas pendientes y próximos pasos hacia las fases de mentoría del programa.
 
 ---
 
@@ -25,7 +27,7 @@ Este módulo introduce los fundamentos de la gestión ágil de proyectos tecnol�
 | **Lunes 12/10** | Guiada (2h) | **Gestión Ágil de Proyectos (Atlassian):** Principios ágiles, descomposición funcional y diseño de roadmaps. | Notas de planificación y selección temática. | `Completado` |
 | **Miércoles 14/10** | Autónoma (2h) | **Formulación y Delimitación de Alcance:** Definición de objetivos, componentes in/out-of-scope y matriz de hitos. | Borrador inicial de planificación. | `Completado` |
 | **Jueves 15/10** | Presencial (Opcional) | **CERN Technical Challenge (Hackathon):** Pruebas de análisis y retos prácticos complementarios. | Registro de participación en retos. | `Opcional` |
-| **Viernes 16/10** | Autónoma (2h) | **Gestión de Riesgos, Roles y Roadmap:** Sistematización de riesgos técnicos, cronograma secuencial e informe final. | [Evidencia 01](evidencias/01-planificacion-inicial-proyecto.md) | `Completado` |
+| **Viernes 16/10** | Autónoma (2h) | **Gestión de Riesgos, Roles y Roadmap:** Sistematización de riesgos técnicos, cronograma secuencial e informe final. | [Evidencia 01](evidencias/01-planificacion-inicial-proyecto.md) y [Evidencia 02](evidencias/02-registro-trabajo-sesion.md) | `Completado` |
 
 ---
 
@@ -33,3 +35,6 @@ Este módulo introduce los fundamentos de la gestión ágil de proyectos tecnol�
 * `ejercicios/`: Notas sobre metodologías ágiles, plantillas de roadmaps y esquemas de topologías de red en GNS3.
 * `evidencias/`: 
   * `01-planificacion-inicial-proyecto.md` (Planificación técnica inicial del proyecto HospitaLink-Secure).
+  * `02-registro-trabajo-sesion.md` (Registro del trabajo de la sesión y resolución de incidencias).
+  * `Actividad1_1_Planificacion_Inicial_Proyecto.docx` y `.pdf` (Entregable formal 1-2 páginas).
+  * `Actividad2_1_Registro_Trabajo_Sesion.docx` y `.pdf` (Entregable formal máximo 1 página).
