@@ -101,5 +101,6 @@ Este espacio documenta el avance progresivo en el dominio de herramientas de com
     ├── ejercicios/
     └── evidencias/
         ├── 01-planificacion-inicial-proyecto.md
-        └── 02-registro-trabajo-sesion.md
+        ├── 02-registro-trabajo-sesion.md
+        └── 03-analisis-estructura-proyecto-tecnico.md
 ```
